@@ -243,7 +243,12 @@ partial_fixpoint
 inductive Poll (α : Type u) where
   | ready   (v : α) : Poll α
   | pending          : Poll α
-deriving Repr, BEq
+deriving Repr, DecidableEq
+
+/-- Opaque representation of `std::task::Context<'_>`.
+    For verification purposes: never inspected, only threaded through `poll` calls.
+    A real model (e.g. for waker reasoning) would belong in a Phase 2 separation logic layer. -/
+opaque Context : Type
 
 /-!
 # Misc
