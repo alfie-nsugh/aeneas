@@ -1,0 +1,24 @@
+{
+  "planPath": "docs/plans/2026-02-22-charon-async-impl.md",
+  "tasks": [
+    {"id": 1, "subject": "Task 1: Add CoroutineKind enum to types.rs", "status": "pending"},
+    {"id": 2, "subject": "Task 2: Add TypeDeclKind::Coroutine to types.rs", "status": "pending", "blockedBy": [1]},
+    {"id": 3, "subject": "Task 3: Add ItemSource::Coroutine to gast.rs", "status": "pending"},
+    {"id": 4, "subject": "Task 4: Add TerminatorKind::Yield and CoroutineDrop to ullbc_ast.rs", "status": "pending"},
+    {"id": 5, "subject": "Task 5: Handle TyKind::Coroutine in translate_types.rs", "status": "pending", "blockedBy": [2]},
+    {"id": 6, "subject": "Task 6: Add translate_coroutine_adt to translate_items.rs", "status": "pending", "blockedBy": [2]},
+    {"id": 7, "subject": "Task 7: Tag coroutine body FunDecl with ItemSource::Coroutine", "status": "pending", "blockedBy": [3]},
+    {"id": 8, "subject": "Task 8: Unblock 4 rejection sites in translate_bodies.rs", "status": "pending", "blockedBy": [4]},
+    {"id": 9, "subject": "Task 9: Register Poll<T> and Context as Charon prelude ADTs", "status": "pending"},
+    {"id": 10, "subject": "Task 10: desugar_coroutines pass skeleton + scope guards", "status": "pending", "blockedBy": [2,3,4,5,6,7,8,9]},
+    {"id": 11, "subject": "Task 11: desugar_coroutines steps 1-2 (yield collection + liveness)", "status": "pending", "blockedBy": [10]},
+    {"id": 12, "subject": "Task 12: desugar_coroutines step 3 (generate state enum)", "status": "pending", "blockedBy": [11]},
+    {"id": 13, "subject": "Task 13: desugar_coroutines step 4 (rewrite poll function)", "status": "pending", "blockedBy": [12]},
+    {"id": 14, "subject": "Task 14: Update ullbc_to_llbc.rs — assert no Yield arrives", "status": "pending", "blockedBy": [4,13]},
+    {"id": 15, "subject": "Task 15: Smoke test with async_basic.rs", "status": "pending", "blockedBy": [14]},
+    {"id": 16, "subject": "Task 16: Fix Poll derive BEq → DecidableEq in Primitives.lean", "status": "pending"},
+    {"id": 17, "subject": "Task 17: Add opaque Context axiom to Primitives.lean", "status": "pending"},
+    {"id": 18, "subject": "Task 18: Update project memory", "status": "pending", "blockedBy": [15]}
+  ],
+  "lastUpdated": "2026-02-22"
+}
